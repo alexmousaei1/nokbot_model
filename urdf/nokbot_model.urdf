@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="nokbot_model">
+
+
+<link
+  name="base_footprint">
+</link>
+
+<joint
+  name="base_link_to_base_footprint_joint"
+  type="fixed">
+  <origin
+    xyz="0 0 0"
+    rpy="0 0 0" />
+  <parent
+    link="base_link" />
+  <child
+    link="base_footprint" />
+</joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.000788920964726242 -4.11100356683958E-05 -0.0312452052245896"
+        rpy="0 0 0" />
+      <mass
+        value="2.69874254136563" />
+      <inertia
+        ixx="0.00137687296700071"
+        ixy="-8.38447944630287E-06"
+        ixz="-1.80199597246119E-07"
+        iyy="0.00216152821383713"
+        iyz="9.76058942954636E-14"
+        izz="0.00284455761292107" />
+    </inertial>
+    <visual>F
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="3.7238E-07 0.0076701 -4.8169E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.048201" />
+      <inertia
+        ixx="3.3506E-06"
+        ixy="4.2599E-07"
+        ixz="-2.1161E-09"
+        iyy="2.7391E-05"
+        iyz="7.5493E-09"
+        izz="2.6652E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/realsense_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/realsense_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="-0.125 0.001375 0.0295"
+      rpy="0 0 3.14" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="lidar_link">
+    <inertial>
+      <origin
+        xyz="0.00829409957033964 0 -0.00854885777720898"
+        rpy="0 0 0" />
+      <mass
+        value="0.146695752131392" />
+      <inertia
+        ixx="6.22721120792818E-05"
+        ixy="-1.49787902731058E-20"
+        ixz="1.88658076337422E-05"
+        iyy="0.000109673997590948"
+        iyz="1.18259672326782E-20"
+        izz="0.000125682524275729" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/lidar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/lidar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lidar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.0185 -0.005 0.07525"
+      rpy="0 0 3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="lidar_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="front_sonar_link">
+    <inertial>
+      <origin
+        xyz="0.000518886989761144 0.00250458607848193 -0.0299506167345617"
+        rpy="0 0 0" />
+      <mass
+        value="0.00448963056401978" />
+      <inertia
+        ixx="1.73996293195748E-07"
+        ixy="3.9569407225273E-10"
+        ixz="-1.65561540691571E-09"
+        iyy="9.36811064369325E-07"
+        iyz="-2.81129607908181E-09"
+        izz="8.86355942937648E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/front_sonar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/front_sonar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_sonar_joint"
+    type="fixed">
+    <origin
+      xyz="-0.1575 -0.001 -0.0395"
+      rpy="3.1416 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_sonar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rear_sonar_link">
+    <inertial>
+      <origin
+        xyz="0.019518886959456 0.0109506167411778 0.0210045860771162"
+        rpy="0 0 0" />
+      <mass
+        value="0.00448963056876648" />
+      <inertia
+        ixx="1.739962933911E-07"
+        ixy="1.65561640702511E-09"
+        ixz="3.95693925127516E-10"
+        iyy="8.86355943097899E-07"
+        iyz="2.81129612060652E-09"
+        izz="9.36811064707442E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/rear_sonar_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/rear_sonar_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_sonar_joint"
+    type="fixed">
+    <origin
+      xyz="0.129 -0.02 0"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="rear_sonar_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="magnet_link">
+    <inertial>
+      <origin
+        xyz="-0.0127684801892372 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0212497327088814" />
+      <inertia
+        ixx="2.68264366601217E-06"
+        ixy="-9.23072584957306E-39"
+        ixz="-2.38178035981036E-23"
+        iyy="2.5897282567185E-06"
+        iyz="2.20663591616801E-40"
+        izz="2.5897282567185E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/magnet_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/magnet_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="magnet_joint"
+    type="fixed">
+    <origin
+      xyz="0.16 0 -0.0245"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="magnet_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="wheel_fl_link">
+    <inertial>
+      <origin
+        xyz="-0.0184994275208872 -5.16253706450698E-15 -7.49400541621981E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0419127518240036" />
+      <inertia
+        ixx="3.56691829868352E-06"
+        ixy="8.24525948726465E-22"
+        ixz="-8.17175131256189E-22"
+        iyy="3.67888005135437E-06"
+        iyz="-8.86406744411824E-21"
+        izz="3.67888005135437E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_fl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_fl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_fl_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1185 -0.09 -0.035647"
+      rpy="1.5558 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_fl_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheel_fr_link">
+    <inertial>
+      <origin
+        xyz="0.0414293686258033 2.77555756156289E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.0419127520114961" />
+      <inertia
+        ixx="3.56706005649266E-06"
+        ixy="-1.46986051576405E-22"
+        ixz="1.69939451046903E-21"
+        iyy="3.67887378202204E-06"
+        iyz="2.5410988417629E-21"
+        izz="3.67887378202206E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_fr_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_fr_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_fr_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1185 0.067 -0.035647"
+      rpy="1.8478 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_fr_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheel_bl_link">
+    <inertial>
+      <origin
+        xyz="-0.0294900593597941 0 -2.22044604925031E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.0419127519725272" />
+      <inertia
+        ixx="3.56706008400786E-06"
+        ixy="1.02759096533814E-21"
+        ixz="9.41309700656892E-22"
+        iyy="3.67887379839621E-06"
+        iyz="1.97153056265794E-21"
+        izz="3.67887379839623E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_bl_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_bl_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_bl_joint"
+    type="continuous">
+    <origin
+      xyz="0.1185 -0.079081 -0.035647"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_bl_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="wheel_br_link">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_br_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://nokbot_model/meshes/wheel_br_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wheel_br_joint"
+    type="continuous">
+    <origin
+      xyz="0.118502000000001 0.0899999999999999 -0.035647"
+      rpy="1.5707963267949 0 1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="wheel_br_link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
